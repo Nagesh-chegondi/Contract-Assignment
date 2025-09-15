@@ -32,7 +32,7 @@ function Sidebar({ setToggle, toggle,hidden,sethidden }) {
           &times;
         </button>
       </div>
-      <h4 onClick={()=>{sethidden(!hidden)} className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
+      <h4 onClick={()=>sethidden(!hidden)} className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
         Contracts
       </h4>
       <h4 className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
