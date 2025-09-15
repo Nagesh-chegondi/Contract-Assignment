@@ -11,7 +11,7 @@ export function Dashboard() {
       <Topbar setToggle={setToggle} />
       <div className="flex flex-1">
         <Sidebar setToggle={setToggle} toggle={toggle} hidden={hidden} sethidden={sethidden} />
-        { hidden?<Mainbar />:null}
+        { hidden?<Mainbar/>:null}
       </div>
     </div>
   );
