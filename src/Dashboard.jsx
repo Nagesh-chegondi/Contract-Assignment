@@ -4,20 +4,21 @@ import contracts from '../public/contracts.json';
 
 export function Dashboard() {
   const [toggle, setToggle] = useState(false);
+  const[hidden, sethidden]  = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       <Topbar setToggle={setToggle} />
       <div className="flex flex-1">
-        <Sidebar setToggle={setToggle} toggle={toggle} />
-        <Mainbar />
+        <Sidebar setToggle={setToggle} toggle={toggle} hidden={hidden} sethidden={sethidden} />
+        { hidden?<Mainbar />}:null}
       </div>
     </div>
   );
 }
 
 
-function Sidebar({ setToggle, toggle }) {
+function Sidebar({ setToggle, toggle,hidden,sethidden }) {
   return (
     <div className={`
       fixed inset-y-0 left-0 transform transition-transform duration-300 ease-in-out
@@ -31,7 +32,7 @@ function Sidebar({ setToggle, toggle }) {
           &times;
         </button>
       </div>
-      <h4 className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
+      <h4 onClick={()=>{sethidden(!hidden)} className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
         Contracts
       </h4>
       <h4 className="p-3 rounded-md cursor-pointer hover:bg-gray-700 transition-colors duration-200">
