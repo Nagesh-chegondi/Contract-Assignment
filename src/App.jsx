@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      navigate("/Dashboard");
+      navigate("/dashboard");
     } else {
       navigate("/");
     }
@@ -40,7 +40,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 }
